@@ -217,6 +217,11 @@ const GLuint indices[] = {
     }else{
         h = self.view.frame.size.height / self.view.frame.size.width;
     }
+    //视图对角线长度（可视最远距离）已变化，除以比例以在对角线上显示uv1点
+    float s = sqrtf(2.0f / (w * w + h * h));
+    w *= s;
+    h *= s;
+    
     GLuint uintW = glGetUniformLocation(self.myProgram, "widthScale");
     glUniform1f(uintW, w);
     GLuint uintH = glGetUniformLocation(self.myProgram, "heightScale");

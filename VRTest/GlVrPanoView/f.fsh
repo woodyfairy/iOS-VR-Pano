@@ -14,7 +14,7 @@ void main()
     //屏幕像素坐标相对于中心坐标
     highp float xx = varyTextCoord.x - 0.5;
     highp float yy = varyTextCoord.y - 0.5;
-    highp float dis = sqrt(xx*xx + yy*yy) / sqrt(0.5); //距离中心距离 (0-1 最长是对角线)
+    highp float dis = sqrt(xx*xx + yy*yy) / sqrt(0.5); //距离中心距离比例 (0-1)(最长是对角线)
     highp float R = 1.0;//球半径， 任意值
     
     //像素所在球面上的初始角度（球面坐标）

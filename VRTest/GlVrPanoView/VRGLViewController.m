@@ -208,6 +208,21 @@ const GLuint indices[] = {
     return 0;
 }
 
+//长宽比
+-(void)viewWillLayoutSubviews{
+    float w = 1;
+    float h = 1;
+    if (self.view.frame.size.width <= self.view.frame.size.height) {
+        w = self.view.frame.size.width / self.view.frame.size.height;
+    }else{
+        h = self.view.frame.size.height / self.view.frame.size.width;
+    }
+    GLuint uintW = glGetUniformLocation(self.myProgram, "widthScale");
+    glUniform1f(uintW, w);
+    GLuint uintH = glGetUniformLocation(self.myProgram, "heightScale");
+    glUniform1f(uintH, h);
+}
+
 /*
 //zRotation
 -(void)setZRotation:(float)rot{

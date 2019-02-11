@@ -44,6 +44,7 @@ void main()
     highp vec4 pos1 = pos0 * rotMatrix;
     //旋转后角度（转到球面坐标）
     highp float angelH1 = atan(pos1.y,pos1.x);
+    pos1.z = clamp(pos1.z, -1.0, 1.0);//防止误差（32位机器精度不够）导致无效数值
     highp float angelV1 = acos(pos1.z/R);
 
     //球面坐标求得纹理uv

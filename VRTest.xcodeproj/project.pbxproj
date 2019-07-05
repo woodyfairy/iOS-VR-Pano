@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC0DB25321FB143C00E2B537 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC0DB25221FB143C00E2B537 /* 3.jpg */; };
+		EC2B030F22CF49BA00CB2F99 /* 1-1ceshi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC2B030822CF49BA00CB2F99 /* 1-1ceshi.jpg */; };
+		EC2B031022CF49BA00CB2F99 /* 1-5测试.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC2B030922CF49BA00CB2F99 /* 1-5测试.jpg */; };
+		EC2B031122CF49BA00CB2F99 /* 1-3测试.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC2B030A22CF49BA00CB2F99 /* 1-3测试.jpg */; };
+		EC2B031222CF49BA00CB2F99 /* 1-4测试.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC2B030B22CF49BA00CB2F99 /* 1-4测试.jpg */; };
+		EC2B031322CF49BA00CB2F99 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC2B030C22CF49BA00CB2F99 /* 2.jpg */; };
+		EC2B031422CF49BA00CB2F99 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC2B030D22CF49BA00CB2F99 /* 3.jpg */; };
+		EC2B031522CF49BA00CB2F99 /* testRoom1_2kMono.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC2B030E22CF49BA00CB2F99 /* testRoom1_2kMono.jpg */; };
 		EC9B5D2A21F9A1A90086148C /* VRGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9B5D2921F9A1A90086148C /* VRGLViewController.m */; };
 		EC9B5D2C21F9B5560086148C /* v.vsh in Resources */ = {isa = PBXBuildFile; fileRef = EC9B5D2B21F9B5560086148C /* v.vsh */; };
 		EC9B5D2E21F9B56D0086148C /* f.fsh in Resources */ = {isa = PBXBuildFile; fileRef = EC9B5D2D21F9B56D0086148C /* f.fsh */; };
@@ -17,12 +23,16 @@
 		ECBDEB1F21F5B02D004B1D1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECBDEB1E21F5B02D004B1D1F /* Assets.xcassets */; };
 		ECBDEB2221F5B02D004B1D1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBDEB2021F5B02D004B1D1F /* LaunchScreen.storyboard */; };
 		ECBDEB2521F5B02D004B1D1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBDEB2421F5B02D004B1D1F /* main.m */; };
-		ECBDEB3021F5B331004B1D1F /* testRoom1_2kMono.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ECBDEB2C21F5B331004B1D1F /* testRoom1_2kMono.jpg */; };
-		ECBDEB3221F5B331004B1D1F /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ECBDEB2E21F5B331004B1D1F /* 2.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC0DB25221FB143C00E2B537 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		EC2B030822CF49BA00CB2F99 /* 1-1ceshi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1-1ceshi.jpg"; sourceTree = "<group>"; };
+		EC2B030922CF49BA00CB2F99 /* 1-5测试.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1-5测试.jpg"; sourceTree = "<group>"; };
+		EC2B030A22CF49BA00CB2F99 /* 1-3测试.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1-3测试.jpg"; sourceTree = "<group>"; };
+		EC2B030B22CF49BA00CB2F99 /* 1-4测试.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1-4测试.jpg"; sourceTree = "<group>"; };
+		EC2B030C22CF49BA00CB2F99 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		EC2B030D22CF49BA00CB2F99 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		EC2B030E22CF49BA00CB2F99 /* testRoom1_2kMono.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testRoom1_2kMono.jpg; sourceTree = "<group>"; };
 		EC9B5D2821F9A1A90086148C /* VRGLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VRGLViewController.h; sourceTree = "<group>"; };
 		EC9B5D2921F9A1A90086148C /* VRGLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VRGLViewController.m; sourceTree = "<group>"; };
 		EC9B5D2B21F9B5560086148C /* v.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = v.vsh; sourceTree = "<group>"; };
@@ -37,8 +47,6 @@
 		ECBDEB2121F5B02D004B1D1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECBDEB2321F5B02D004B1D1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECBDEB2421F5B02D004B1D1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ECBDEB2C21F5B331004B1D1F /* testRoom1_2kMono.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testRoom1_2kMono.jpg; sourceTree = "<group>"; };
-		ECBDEB2E21F5B331004B1D1F /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +108,13 @@
 		ECBDEB2B21F5B331004B1D1F /* images */ = {
 			isa = PBXGroup;
 			children = (
-				ECBDEB2C21F5B331004B1D1F /* testRoom1_2kMono.jpg */,
-				ECBDEB2E21F5B331004B1D1F /* 2.jpg */,
-				EC0DB25221FB143C00E2B537 /* 3.jpg */,
+				EC2B030822CF49BA00CB2F99 /* 1-1ceshi.jpg */,
+				EC2B030A22CF49BA00CB2F99 /* 1-3测试.jpg */,
+				EC2B030B22CF49BA00CB2F99 /* 1-4测试.jpg */,
+				EC2B030922CF49BA00CB2F99 /* 1-5测试.jpg */,
+				EC2B030C22CF49BA00CB2F99 /* 2.jpg */,
+				EC2B030D22CF49BA00CB2F99 /* 3.jpg */,
+				EC2B030E22CF49BA00CB2F99 /* testRoom1_2kMono.jpg */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -164,14 +176,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC2B031422CF49BA00CB2F99 /* 3.jpg in Resources */,
 				EC9B5D2C21F9B5560086148C /* v.vsh in Resources */,
-				ECBDEB3221F5B331004B1D1F /* 2.jpg in Resources */,
+				EC2B031522CF49BA00CB2F99 /* testRoom1_2kMono.jpg in Resources */,
+				EC2B031122CF49BA00CB2F99 /* 1-3测试.jpg in Resources */,
+				EC2B031322CF49BA00CB2F99 /* 2.jpg in Resources */,
 				ECBDEB2221F5B02D004B1D1F /* LaunchScreen.storyboard in Resources */,
+				EC2B030F22CF49BA00CB2F99 /* 1-1ceshi.jpg in Resources */,
+				EC2B031222CF49BA00CB2F99 /* 1-4测试.jpg in Resources */,
 				ECBDEB1F21F5B02D004B1D1F /* Assets.xcassets in Resources */,
+				EC2B031022CF49BA00CB2F99 /* 1-5测试.jpg in Resources */,
 				EC9B5D2E21F9B56D0086148C /* f.fsh in Resources */,
-				ECBDEB3021F5B331004B1D1F /* testRoom1_2kMono.jpg in Resources */,
 				ECBDEB1D21F5B017004B1D1F /* Main.storyboard in Resources */,
-				EC0DB25321FB143C00E2B537 /* 3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

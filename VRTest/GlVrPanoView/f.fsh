@@ -1,6 +1,8 @@
 varying highp vec2 varyTextCoord;
 uniform sampler2D colorMap;
 uniform highp mat4 rotMatrix;
+//uniform highp float rotH;
+//uniform highp float rotV;
 uniform highp float viewfield;
 uniform highp float perspective;
 uniform highp float p_min;
@@ -8,7 +10,7 @@ uniform highp float p_max;
 uniform highp float f_min;
 uniform highp float f_max;
 
-highp float PI = 3.14159265;
+highp float PI = 3.14159265358979323846264338327950288;
 void main()
 {
     //屏幕像素坐标相对于中心坐标
@@ -17,7 +19,7 @@ void main()
     highp float dis = sqrt(xx*xx + yy*yy) / sqrt(0.5); //距离中心距离比例 (0-1)(最长是对角线)
     highp float R = 1.0;//球半径， 任意值
     
-    //像素所在球面上的初始角度（球面坐标）
+    //像素所在球面上的初始角度（球面坐标）,想象向正下方看，图片的底边为0，底边旋转一圈为最下方一点
     //以z轴：横向旋转角度
     highp float angelH0 = atan(yy, xx);
     
@@ -39,12 +41,27 @@ void main()
     highp float y0 = R * sin(angelH0) * sin(angelV0);
     highp float z0 = R * cos(angelV0);
     highp vec4 pos0 = vec4(x0, y0, z0, 1.0);
+    
+    //手动构造旋转矩阵
+//    highp mat4 matH = mat4(
+//                           cos(rotH),   -sin(rotH), 0,  0,
+//                           sin(rotH),   cos(rotH),  0,  0,
+//                           0,           0,          1,  0,
+//                           0,           0,          0,  1
+//                           );
+//    highp mat4 matV = mat4(
+//                           1,   0,          0,          0,
+//                           0,   cos(rotV),  -sin(rotV), 0,
+//                           0,   sin(rotV),  cos(rotV),  0,
+//                           0,   0,          0,          1
+//                           );
+//    highp mat4 rotMatrix = matV * matH;
 
     //旋转后坐标（矩阵变换）
     highp vec4 pos1 = pos0 * rotMatrix;
     //旋转后角度（转到球面坐标）
     highp float angelH1 = atan(pos1.y,pos1.x);
-    pos1.z = clamp(pos1.z, -1.0, 1.0);//防止误差（32位机器精度不够）导致无效数值
+    pos1.z = clamp(pos1.z, -R, R);//防止误差（32位机器精度不够）导致无效数值
     highp float angelV1 = acos(pos1.z/R);
 
     //球面坐标求得纹理uv
@@ -55,6 +72,6 @@ void main()
 //    highp float uu = 1.0;
 //    highp float vv = 1.0;
     
-    highp vec2 uv = vec2(uu, 1.0 - vv);
+    highp vec2 uv = vec2(1.0 - uu, 1.0 - vv);
     gl_FragColor = texture2D(colorMap, uv);
 }

@@ -18,6 +18,11 @@
 
 @property (strong, nonatomic) VRGLViewController *vrViewController;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *btnsScrollView;
+@property (weak, nonatomic) IBOutlet UIView *scrollContentView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollWidth;
+@property (strong, nonatomic) NSArray *arrImageNames;
+
 //手势
 @property (strong, nonatomic) UIPanGestureRecognizer *pan;
 @property (assign, nonatomic) CGPoint originRot;
@@ -42,7 +47,51 @@
     
     _pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
     [_vrView addGestureRecognizer:_pan];
+    
+    self.arrImageNames = @[@"testRoom1_2kMono.jpg", @"1-1ceshi.jpg", @"1-3测试.jpg", @"1-4测试.jpg", @"1-5测试.jpg", @"2.jpg", @"3.jpg"];
+    for (int i = 0; i< self.arrImageNames.count; i++) {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.scrollContentView addSubview:btn];
+        btn.tag = i;
+        [btn addTarget:self action:@selector(imageChanged:) forControlEvents:UIControlEventTouchUpInside];
+        //[btn setTranslatesAutoresizingMaskIntoConstraints:NO];
+        //btn.autoresizingMask = UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
+        [btn setFrame:CGRectMake(100 * i + 4 * (i+1), 0, 100, 50)];
+        [btn setContentMode:UIViewContentModeScaleAspectFill];
+        UIImage *image = [UIImage imageNamed:[self.arrImageNames objectAtIndex:i]];
+        UIImage *compressImage = [self compressPictureWith:image MaxSize:100];
+        [btn setImage:compressImage forState:UIControlStateNormal];
+    }
+    self.scrollWidth.constant = 100 * self.arrImageNames.count + 4 * (self.arrImageNames.count+1);
 }
+-(UIImage *)compressPictureWith:(UIImage *)originnalImage MaxSize:(float)maxSize{
+    CGFloat ruleSize = maxSize;
+    if (originnalImage.size.width <= ruleSize && originnalImage.size.height <= ruleSize) {
+        return originnalImage;
+    }
+    
+    CGFloat width = originnalImage.size.width, height = originnalImage.size.height;
+    if (width > ruleSize) {
+        height = ruleSize/width * height;
+        width = ruleSize;
+    }
+    if (height > ruleSize) {
+        width = ruleSize/height * width;
+        height = ruleSize;
+    }
+    
+    CGRect rect = CGRectMake(0, 0, width, height);
+    // 开启图片上下文
+    UIGraphicsBeginImageContext(rect.size);
+    // 将图片渲染到图片上下文
+    [originnalImage drawInRect:rect];
+    // 获取图片
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    // 关闭图片上下文
+    UIGraphicsEndImageContext();
+    return img;
+}
+
 -(void)dealloc{
     [self stopAnim];
 }
@@ -137,7 +186,6 @@
 }
 
 
-
 - (IBAction)xRoted:(id)sender {
     //_vrView.rotX = _rotX.value;
     //[_vrViewController setRotation:_rotX.value * 360];
@@ -156,7 +204,10 @@
 }
 
 - (IBAction)imageChanged:(UIButton *)sender {
-    [_vrViewController setImage:sender.imageView.image];
+    //[_vrViewController setImage:sender.imageView.image];
+    UIImage *oriImage = [UIImage imageNamed:[self.arrImageNames objectAtIndex:sender.tag]];
+    UIImage *image = [self compressPictureWith:oriImage MaxSize:4096];
+    [_vrViewController setImage:image];
 }
 
 @end

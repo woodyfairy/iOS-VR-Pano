@@ -274,13 +274,18 @@ const GLuint indices[] = {
     
     float radiansX = -_rotX * M_PI * 2; //相反
     float radiansY = _rotY * M_PI;
+    
     GLKMatrix4 rotationX = GLKMatrix4MakeRotation(radiansX , 0.0, 0.0, 1.0);
     GLKMatrix4 rotationY = GLKMatrix4MakeRotation(radiansY , 1.0, 0.0, 0.0);
-    
     GLuint uint = glGetUniformLocation(self.myProgram, "rotMatrix");
     GLKMatrix4 transformMatrix = GLKMatrix4Multiply(rotationY, rotationX);
     GLfloat *rot = transformMatrix.m;
     glUniformMatrix4fv(uint, 1, GL_FALSE, rot);
+    
+//    GLuint uint = glGetUniformLocation(self.myProgram, "rotH");
+//    glUniform1f(uint, radiansX);
+//    GLuint uint2 = glGetUniformLocation(self.myProgram, "rotV");
+//    glUniform1f(uint2, radiansY);
 }
 
 -(void)setViewfield:(float)viewfield{

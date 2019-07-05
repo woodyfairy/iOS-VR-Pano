@@ -56,13 +56,13 @@
         [btn addTarget:self action:@selector(imageChanged:) forControlEvents:UIControlEventTouchUpInside];
         //[btn setTranslatesAutoresizingMaskIntoConstraints:NO];
         //btn.autoresizingMask = UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
-        [btn setFrame:CGRectMake(100 * i + 4 * (i+1), 0, 100, 50)];
+        [btn setFrame:CGRectMake(160 * i + 4 * (i+1), 0, 160, 80)];
         [btn setContentMode:UIViewContentModeScaleAspectFill];
         UIImage *image = [UIImage imageNamed:[self.arrImageNames objectAtIndex:i]];
-        UIImage *compressImage = [self compressPictureWith:image MaxSize:100];
+        UIImage *compressImage = [self compressPictureWith:image MaxSize:160];
         [btn setImage:compressImage forState:UIControlStateNormal];
     }
-    self.scrollWidth.constant = 100 * self.arrImageNames.count + 4 * (self.arrImageNames.count+1);
+    self.scrollWidth.constant = 160 * self.arrImageNames.count + 4 * (self.arrImageNames.count+1);
 }
 -(UIImage *)compressPictureWith:(UIImage *)originnalImage MaxSize:(float)maxSize{
     CGFloat ruleSize = maxSize;

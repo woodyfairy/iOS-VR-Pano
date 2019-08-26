@@ -1,2 +1,2 @@
 # IOSVR
-iOS-native VR Panorama ViewController
+Native iOS VR Panorama ViewController, by using GLKViewController & shader.

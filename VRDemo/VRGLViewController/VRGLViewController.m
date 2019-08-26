@@ -2,8 +2,8 @@
 //  GLVRViewController.m
 //  VRTest
 //
-//  Created by taagoo on 2019/1/24.
-//  Copyright © 2019 taagoo. All rights reserved.
+//  Created by wdy on 2019/1/24.
+//  Copyright © 2019 wdy. All rights reserved.
 //
 
 #import "VRGLViewController.h"

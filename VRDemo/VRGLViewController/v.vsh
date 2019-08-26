@@ -1,3 +1,6 @@
+//  Created by wdy on 2019/1/24.
+//  Copyright © 2019 wdy. All rights reserved.
+
 attribute vec4 position;
 attribute vec2 textCoordinate;
 varying lowp vec2 varyTextCoord;

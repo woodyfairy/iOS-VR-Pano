@@ -1,3 +1,6 @@
+//  Created by wdy on 2019/1/24.
+//  Copyright © 2019 wdy. All rights reserved.
+
 varying highp vec2 varyTextCoord;
 uniform sampler2D colorMap;
 uniform highp mat4 rotMatrix;

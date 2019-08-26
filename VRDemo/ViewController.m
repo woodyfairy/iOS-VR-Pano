@@ -2,8 +2,8 @@
 //  ViewController.m
 //  VRTest
 //
-//  Created by taagoo on 2019/1/21.
-//  Copyright © 2019 taagoo. All rights reserved.
+//  Created by wdy on 2019/1/21.
+//  Copyright © 2019 wdy. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -48,7 +48,7 @@
     _pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
     [_vrView addGestureRecognizer:_pan];
     
-    self.arrImageNames = @[@"testRoom1_2kMono.jpg", @"1-1ceshi.jpg", @"1-3测试.jpg", @"1-4测试.jpg", @"1-5测试.jpg", @"2.jpg", @"3.jpg"];
+    self.arrImageNames = @[@"testRoom1_2kMono.jpg", @"1-1ceshi.jpg", @"1-3测试.jpg", @"1-5测试.jpg", @"2.jpg", @"3.jpg"];
     for (int i = 0; i< self.arrImageNames.count; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.scrollContentView addSubview:btn];
